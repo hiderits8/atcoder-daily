@@ -5,8 +5,8 @@ int main()
 {
     string s;
     cin >> s;
-    int cur = 0;
-    int res = 0;
+    long long cur = 0;
+    long long res = 0;
     for (int i = 0; i < s.size(); ++i)
     {
         if (s[i] == 'W')
