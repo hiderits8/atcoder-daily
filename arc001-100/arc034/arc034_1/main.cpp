@@ -9,9 +9,9 @@ int main()
     double max = 0;
     for (int i = 0; i < n; i++)
     {
-        int a, b, c, d, e;
+        double a, b, c, d, e;
         cin >> a >> b >> c >> d >> e;
-        int p = (double)(a + b + c + d) + (double)(e * 110 / 900);
+        double p = a + b + c + d + (e * 110 / 900);
         if (p > max)
         {
             max = p;
