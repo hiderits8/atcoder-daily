@@ -3,6 +3,13 @@
     "iostream": "cpp",
     "regex": "cpp",
     "chrono": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "iomanip": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp"
   }
 }
