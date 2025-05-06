@@ -6,22 +6,22 @@ int main()
 {
     int n;
     cin >> n;
-    vector<int> a(n);
+    unordered_map<int, int> a;
     for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        int p;
+        cin >> p;
+        p %= 200;
+        a[p]++;
     }
 
-    int cnt = 0;
-    for (int i = 0; i < n - 1; i++)
+    ll cnt = 0;
+    for (auto [r, c] : a)
     {
-        for (int j = i + 1; i < n; i++)
-        {
-            if (a[i] - a[j] % 200)
-            {
-                cnt++;
-            }
-        }
+        if (c < 2)
+            continue;
+        ll cc = c;
+        cnt += (cc - 1) * cc / 2;
     }
 
     cout << cnt << "\n";
