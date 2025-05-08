@@ -4,40 +4,33 @@ using ll = long long;
 
 int main()
 {
-    int n, q;
-    cin >> n;
+    int N;
+    cin >> N;
     vector<ll> X(N), P(N);
     for (int i = 0; i < N; i++)
     {
-        cin >> X[i]; // すでに X[i] < X[i+1] の保証あり
+        cin >> X[i];
     }
     for (int i = 0; i < N; i++)
     {
         cin >> P[i];
     }
-    map<ll, ll> mp;
-    for (int i = 0; i < n; i++)
+
+    vector<ll> S(N + 1, 0);
+    for (int i = 0; i < N; i++)
     {
-        ll x;
-        cin >> x;
-        vil[i] = x;
+        S[i + 1] = S[i] + P[i];
     }
-    ll sum = 0;
-    for (int i = 0; i < n; i++)
+
+    int Q;
+    cin >> Q;
+    while (Q--)
     {
-        ll p;
-        cin >> p;
-        sum += p;
-        mp[vil[i]] = sum;
-    }
-    cin >> q;
-    for (int i = 0; i < q; i++)
-    {
-        ll l, r;
-        cin >> l >> r;
-        auto it = mp.lower_bound(l);
-        auto last = mp.upper_bound(r);
-        cout << (ll)last->second - (ll)it->second << endl;
+        ll L, R;
+        cin >> L >> R;
+        int lo = int(lower_bound(X.begin(), X.end(), L) - X.begin());
+        int hi = int(upper_bound(X.begin(), X.end(), R) - X.begin());
+        cout << (S[hi] - S[lo]) << "\n";
     }
 
     return 0;
