@@ -9,6 +9,10 @@ int main()
 
     long double dist = sqrtl(x * x + y * y);
     ll res = ceill(dist / r);
+    if (res == 1)
+        ++res;
+    if (x * x + y * y == r * r)
+        res = 1;
     cout << res << endl;
     return 0;
 }
