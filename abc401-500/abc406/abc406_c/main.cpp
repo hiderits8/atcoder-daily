@@ -7,39 +7,47 @@ int main()
     int n;
     cin >> n;
     vector<int> a(n);
-    vector<int> uprange;
-
-    int top = 0, bottom = 0;
+    vector<pair<char, ll>> s;
 
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
-        if (i < 2)
-            continue;
-        if (a[i - 2] < a[i - 1] && a[i - 1] > a[i])
-        {
-            top = i - 1;
-            uprange.push_back(i - 1 - bottom);
-        }
-        else if (a[i - 2] > a[i - 1] && a[i - 1] < a[i])
-        {
-            bottom = i - 1;
-        }
     }
-    if (bottom != -1 && top < bottom)
+    for (int i = 0; i < n - 1; i++)
     {
-        uprange.push_back(n - 1 - bottom);
+        if (a[i] < a[i + 1])
+        {
+            if (s.empty() || s.back().first == '>')
+            {
+                s.push_back({'<', 1});
+            }
+            else
+            {
+                s.back().second++;
+            }
+        }
+        else
+        {
+            if (s.empty() || s.back().first == '<')
+            {
+                s.push_back({'>', 1});
+            }
+            else
+            {
+                s.back().second++;
+            }
+        }
     }
 
-    int res = 0;
-    for (int i = 0; i < uprange.size(); i++)
+    ll ans = 0;
+    for (int i = 1; i < s.size() - 1; i++)
     {
-        if (i != 0)
+        if (s[i].first == '>')
         {
-            res += uprange[i] * uprange[i - 1];
+            ans += s[i - 1].second * s[i + 1].second;
         }
     }
-    cout << res << endl;
+    cout << ans << endl;
 
     return 0;
 }
