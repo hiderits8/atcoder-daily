@@ -17,6 +17,7 @@ int main()
         cout << "Yes" << endl;
         return 0;
     }
+
     cout << "No" << endl;
     return 0;
 }
