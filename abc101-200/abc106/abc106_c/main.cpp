@@ -27,7 +27,7 @@ int main()
         }
     }
 
-    if (idx1 + 1 <= k)
+    if (k <= idx1 + 1)
     {
         cout << 1 << endl;
     }
