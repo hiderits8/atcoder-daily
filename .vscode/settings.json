@@ -5,6 +5,8 @@
         "string_view": "cpp",
         "ostream": "cpp",
         "regex": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "tuple": "cpp",
+        "random": "cpp"
     }
 }
