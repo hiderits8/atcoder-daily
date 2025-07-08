@@ -54,6 +54,15 @@ int main(void)
         seen[cur] = true;
     }
 
+    for (auto s : seen)
+    {
+        if (!s)
+        {
+            cout << "No" << endl;
+            return 0;
+        }
+    }
+
     cout << "Yes" << endl;
     return 0;
 }
