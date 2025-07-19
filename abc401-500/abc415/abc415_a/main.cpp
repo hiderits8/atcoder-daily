@@ -4,19 +4,25 @@ using ll = long long;
 
 int main()
 {
-    int n, l, r;
-    cin >> n >> l >> r;
-    int ans = 0;
-    for (int i = 0; i < n; i++)
+    int n;
+    cin >> n;
+    set<int> s;
+    for (int i = 0; i < n; ++i)
     {
-        int x1, x2;
-        cin >> x1 >> x2;
-        if (x1 <= l && x2 >= r)
-        {
-            ans++;
-        }
+        int a;
+        cin >> a;
+        s.insert(a);
     }
-    cout << ans << endl;
 
+    int x;
+    cin >> x;
+    if (s.count(x))
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        cout << "No" << endl;
+    }
     return 0;
 }
