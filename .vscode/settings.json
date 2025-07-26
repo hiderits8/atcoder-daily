@@ -9,6 +9,13 @@
         "tuple": "cpp",
         "random": "cpp",
         "span": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "ios": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "valarray": "cpp",
+        "vector": "cpp",
+        "__split_buffer": "cpp"
     }
 }
