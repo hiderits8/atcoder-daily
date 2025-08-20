@@ -7,37 +7,34 @@ using ll = long long;
 int main(void)
 {
     string s;
-    int k;
+    ll k;
     cin >> s >> k;
     vector<int> cont;
 
-    int cnt = 0;
+    int cnt = 1;
     int n = s.size();
     bool is_onechar = true;
-    char prev = 'A';
-    rep(i, n)
+
+    for (int i = 1; i < n; ++i)
     {
-        if (prev == 'A' || s[i] != prev)
+        if (s[i] == s[i - 1])
         {
-            if (cnt > 1)
-                cont.push_back(cnt);
-            cnt = 1;
-            prev = s[i];
+            cnt++;
         }
         else
         {
-            cnt++;
-            if (i == n - 1 && cnt > 1)
-                cont.push_back(cnt);
+            cont.push_back(cnt);
+            cnt = 1;
         }
 
         if (is_onechar && s[i] != s[0])
             is_onechar = false;
     }
+    cont.push_back(cnt);
 
     if (is_onechar)
     {
-        cout << 1LL * (n / 2) * k << endl;
+        cout << 1LL * (n * k) / 2 << endl;
         return 0;
     }
 
@@ -53,9 +50,9 @@ int main(void)
     }
     else
     {
-        int a = !cont.empty() ? cont.front() : 1;
-        int b = !cont.empty() ? cont.back() : 1;
-        ans -= (a / 2 + b / 2 - (a + b) / 2) * k;
+        ll a = cont.front();
+        ll b = cont.back();
+        ans -= (a / 2 + b / 2 - (a + b) / 2) * (k - 1);
         cout << ans << endl;
     }
 
