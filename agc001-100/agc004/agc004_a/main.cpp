@@ -6,7 +6,7 @@ using ll = long long;
 
 int main(void)
 {
-    int a, b, c;
+    ll a, b, c;
     cin >> a >> b >> c;
 
     if (!(a & 1 && b & 1 && c & 1))
