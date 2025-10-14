@@ -19,7 +19,7 @@ int main(void)
     ll ans = 0;
     for (auto [s, c] : mp)
     {
-        ans += c * (c - 1) / 2;
+        ans += 1LL * c * (c - 1) / 2;
     }
     cout << ans << endl;
 
