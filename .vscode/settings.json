@@ -16,6 +16,8 @@
         "list": "cpp",
         "valarray": "cpp",
         "vector": "cpp",
-        "__split_buffer": "cpp"
+        "__split_buffer": "cpp",
+        "bitset": "cpp",
+        "stacktrace": "cpp"
     }
 }
