@@ -27,7 +27,7 @@ int main()
         ull ans = 0;
         string sc = to_string(c);
 
-        ull mi = stoull(sc + sc)
-    }
+        ull mi = stoull(sc + sc);
+        }
     return 0;
 }
