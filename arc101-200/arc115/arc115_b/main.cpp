@@ -30,6 +30,7 @@ int main(void)
     int min_i = 0;
     rep(i, n) if (diff[i] == *max_diff) min_i = i;
 
+    cout << "Yes" << endl;
     rep(i, n)
     {
         cout << c[i][0] - c[min_i][0];
