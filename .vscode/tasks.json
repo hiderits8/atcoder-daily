@@ -5,8 +5,10 @@
             "label": "C/C++: g++ アクティブなファイルのビルド",
             "command": "/opt/homebrew/bin/g++-15",
             "args": [
+                "-std=gnu++17",
                 "-fdiagnostics-color=always",
                 "-g",
+                "-I${env:HOME}/.local/include",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

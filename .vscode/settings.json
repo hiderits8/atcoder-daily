@@ -19,5 +19,8 @@
         "__split_buffer": "cpp",
         "bitset": "cpp",
         "stacktrace": "cpp"
+    },
+    "terminal.integrated.env.osx": {
+        "PATH": "/opt/homebrew/bin:/opt/homebrew/sbin:${env:PATH}"
     }
 }
