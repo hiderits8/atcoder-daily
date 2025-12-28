@@ -1,17 +1,17 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 int main(void)
 {
     string s, t;
     cin >> s >> t;
     vector<pair<char, int>> smap, tmap;
-    char pre1, pre2;
     for (int i = 0; i < s.size(); ++i)
     {
-        if (smap.empty() || pre1 != s[i])
+        char a = s[i];
+        if (smap.empty() || smap.back().first != a)
         {
-            smap.emplace_back(s[i], 1);
-            pre1 = s[i];
+            smap.emplace_back(a, 1);
         }
         else
         {
@@ -20,10 +20,10 @@ int main(void)
     }
     for (int i = 0; i < t.size(); ++i)
     {
-        if (tmap.empty() || pre2 != t[i])
+        char a = t[i];
+        if (tmap.empty() || tmap.back().first != a)
         {
-            tmap.emplace_back(t[i], 1);
-            pre2 = t[i];
+            tmap.emplace_back(a, 1);
         }
         else
         {
@@ -37,33 +37,16 @@ int main(void)
         return 0;
     }
 
-    int sz = smap.size();
-
-    bool ok = true;
-    for (int i = 0; i < sz; ++i)
+    for (int i = 0; i < smap.size(); ++i)
     {
-        if (smap[i].first != tmap[i].first)
+        auto [cs, sn] = smap[i];
+        auto [ct, tn] = tmap[i];
+        if (cs != ct || sn > tn || (sn == 1 && tn != 1))
         {
-            ok = false;
-        }
-
-        if (smap[i].second == tmap[i].second)
-            continue;
-
-        if (smap[i].second == 1 || tmap[i].second < smap[i].second)
-        {
-            ok = false;
+            cout << "No" << endl;
+            return 0;
         }
     }
-
-    if (ok)
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
-
+    cout << "Yes" << endl;
     return 0;
 }
